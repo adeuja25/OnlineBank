@@ -7,7 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Role {
@@ -18,7 +18,7 @@ public class Role {
 	
 	private String name;
 	
-	@OneToOne(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<UserRole> userRoles = new HashSet<>();
 	
 	public Role(){
